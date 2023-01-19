@@ -1,6 +1,5 @@
 # Python build files
 __pycache__
 
-# Private files related to the specific bot
-TOKEN.txt
-InviteLink.txt
+# Settings file containing sensitive info, see "exampleSettings.py"
+settings.py
