@@ -11,7 +11,8 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot():
-    TOKEN = "MTA2NTY1Mzc3NTg2OTY4OTkzNg.GktWuO.z-Zxl08EzXL3fB3OSu6V90kv_X8YWCxOoP1rFI"
+    with open("TOKEN.txt", "r") as token_file:
+        TOKEN = token_file.read()
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
@@ -31,7 +32,7 @@ def run_discord_bot():
         username = str(message.author)
         user_message = str(message.content)
         channel = str(message.channel)
-        print(message)
+
         # Logging in terminal
         print(f"{username} said '{user_message}' in {channel}")
 
