@@ -1,0 +1,6 @@
+# Python build files
+__pycache__
+
+# Private files related to the specific bot
+TOKEN.txt
+InviteLink.txt
