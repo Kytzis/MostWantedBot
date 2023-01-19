@@ -1,14 +1,11 @@
-import random
+import db
 
 
-def handle_response(message):
-    p_message = message.lower()
+def handle_response(message, db_conn):
+    p_message = message.lower().split(" ")
 
-    if p_message == "hello":
-        return "Hey there!"
-
-    if p_message == "roll":
-        return str(random.randint(1, 6))
-
-    if p_message == "!help":
-        return "`This is a help message that you can modify.`"
+    # Get rating of a single racer
+    if p_message[0] == "getrating":
+        if len(p_message) < 2 or p_message[1] == "":
+            return "Invalid use of GetRating, please provide a racing alias."
+        return db.get_rating(p_message[1], db_conn)
